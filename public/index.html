@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -26,11 +26,20 @@
       <section id="channel-select"></section>
       <section id="channel-screen">
         <aside class="room-list">
-          <h3>Rooms of This Channel</h3>
-          <button type="button" id="btn--hide-room-list">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
+          <header>
+            <h3>Rooms of <span class="list-room-name"></span></h3>
+            <button type="button" id="btn--hide-room-list">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </header>
           <div class="list-of-room"></div>
+          <div class="user-list-of-room">
+            <h2>
+              Online users on <span class="user-list-of-room-name"></span>
+            </h2>
+            <span class="active-user-counter"></span>
+            <div class="user-list-ul"></div>
+          </div>
         </aside>
         <div id="chat-screen">
           <header class="chat-header">
@@ -39,22 +48,50 @@
                 <i class="fa-solid fa-bars"></i>
               </button>
               <h3>
-                <span class="room-name">Room Name</span
-                ><span class="channel-name-of-room">Channel Name</span>
+                <div class="room-name-and-counter">
+                  <span class="room-name"> Room Name </span>
+                  <span class="room-title-counter"> </span>
+                </div>
+
+                <span class="channel-name-of-room">Channel Name</span>
               </h3>
             </div>
             <button type="button" class="btn--room-settings">
               <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
+            <div class="room-settings">
+              <button type="button" class="show-user-list">
+                <i class="fa-solid fa-user"></i> User Lists
+              </button>
+              <button type="button">
+                <i class="fa-solid fa-bell-slash"></i>Mute
+              </button>
+            </div>
           </header>
           <div class="chat-area"></div>
-            <form id="message-form" class="typing-area" autocomplete="off">
-              <input type="text" id="ipt-message" placeholder="Enter your message..." />
-              <input type="hidden" id="room-id" data-room-title="" />
-              <button type="submit" class="btn--send-message">
-                <i class="fa-solid fa-paper-plane"></i>
-              </button>
-            </form>
+          <form id="message-form" class="typing-area" autocomplete="off">
+            <input
+              type="text"
+              id="ipt-message"
+              placeholder="Enter your message..."
+            />
+            <input type="hidden" id="room-id" data-room-title="" />
+            <div class="hidden-image-select">
+              <input
+                type="file"
+                name="profile_pic"
+                accept="image/*"
+                id="send-image"
+              />
+              <label>Select an image to send...</label>
+            </div>
+            <button type="button" class="btn--toggle-image-select">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <button type="submit" class="btn--send-message">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
         </div>
       </section>
     </div>

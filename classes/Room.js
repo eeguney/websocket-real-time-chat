@@ -1,24 +1,27 @@
 class Room {
+  constructor(id, title, namespaceID) {
+    this.id = id;
+    this.title = title;
+    this.namespaceID = namespaceID;
+    this.users = [];
+    this.history = [];
+  }
 
-    constructor(id, title, namespaceID) {
-        this.id = id;
-        this.title = title;
-        this.namespaceID = namespaceID;
-        this.users = [];
-        this.history = []
-    }
-    
-    newMessage(message) {
-        this.history.push(message)
-    }
+  newMessage(message) {
+    this.history.push(message);
+  }
 
-    newUser(user) {
-        this.users.push(user)
-    }
+  newUser(user) {
+    this.users.push(user);
+  }
 
-    clearHistory() {
-        this.history = []
-    }
+  userLeave(userID) {
+    this.users = this.users.filter((user) => user.userID !== userID);
+  }
+
+  clearHistory() {
+    this.history = [];
+  }
 }
 
-module.exports = Room
+module.exports = Room;
