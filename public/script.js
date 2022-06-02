@@ -20,7 +20,7 @@ if (!window.localStorage.getItem("currentUser")) {
 }
 console.log(`username: ${username}, id: ${currentUserID}`)
 
-const socket = io("http://localhost:9000", {
+const socket = io("https://websocket-real-time-chat.herokuapp.com:9000", {
   query: {
     username,
   },

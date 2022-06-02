@@ -2,7 +2,7 @@ function joinToNamespace(endpoint) {
   if (namespaceSocket) {
     namespaceSocket.close();
   }
-  namespaceSocket = io(`http://localhost:9000${endpoint}`, {
+  namespaceSocket = io(`https://websocket-real-time-chat.herokuapp.com:9000${endpoint}`, {
     query: {
       username,
     },
