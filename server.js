@@ -58,9 +58,7 @@ namespaces.forEach((namespace) => {
         thisRoom.newUser({ username: thisUsername, userID: data.userID });
       }
 
-      setInterval(() => {
         namespaceSocket.emit("getUserList", thisRoom.users);
-      }, 2000);
     });
 
     namespaceSocket.on("messageToServer", (data) => {

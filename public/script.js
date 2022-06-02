@@ -20,7 +20,7 @@ if (!window.localStorage.getItem("currentUser")) {
 }
 console.log(`username: ${username}, id: ${currentUserID}`)
 
-const socket = io("https://websocket-real-time-chat.herokuapp.com:9000", {
+const socket = io("http://192.168.1.7:9000", {
   query: {
     username,
   },
@@ -40,7 +40,7 @@ socket.on("connect", (data) => {
     namespaceitem.forEach((item) => {
       let namespaceuserCount = 0;
       item.rooms.map((room) => (namespaceuserCount += room.users.length));
-      channelDiv.innerHTML += `<button class="namespace" type="button" ns=${item.endpoint}><span><i class="fa-solid fa-${item.icon}"></i><label>${item.title}</label></span><span class="namespace-active-users">${namespaceuserCount} online</span></button>`;
+      channelDiv.innerHTML += `<button class="namespace" type="button" ns=${item.endpoint}><span><i class="fa-solid fa-${item.icon}"></i><label>${item.title}</label></span><span class="namespace-active-users">${namespaceuserCount}</span></button>`;
     });
     setTimeout(() => {
       Array.from(document.getElementsByClassName("namespace")).forEach(

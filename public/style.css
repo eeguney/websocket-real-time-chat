@@ -455,7 +455,7 @@ body {
   font-size: 19px;
 }
 
-.btn--send-message:hover {
+.btn--send-message:active {
   background-color: #d8d8d8;
 }
 
