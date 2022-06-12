@@ -1,7 +1,7 @@
 # Websocket Real-Time Chat Web App with Socket.IO and pure Javascript
 A realtime chat application written in native Javascript and NodeJS using WebSocket and SocketIO.
 
-<img align="center" src="assets/DEMO.gif" width="700">
+<img align="center" src="assets/DEMO.gif" width="800">
 
 ## Built with;
 
